@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace PetsAlone.Core
+namespace Figure8Challenge.Core.Models
 {
     public class ApplicationUser : IdentityUser
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PetsAlone.Core
+namespace Figure8Challenge.Core.Models
 {
     public class PetSearchField
     {

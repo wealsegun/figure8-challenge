@@ -1,8 +1,8 @@
-﻿using Figure8Challenge.Core;
+﻿using Figure8Challenge.Core.LogicInterface;
+using Figure8Challenge.Core.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PetsAlone.Core;
 
 namespace Figure8Challenge.Angular.Controllers
 {

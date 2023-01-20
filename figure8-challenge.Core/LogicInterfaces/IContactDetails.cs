@@ -1,9 +1,9 @@
-﻿using PetsAlone.Core;
+﻿using Figure8Challenge.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Figure8Challenge.Core
+namespace Figure8Challenge.Core.LogicInterface
 {
     public interface IContactDetails
     {

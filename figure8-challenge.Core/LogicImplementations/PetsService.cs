@@ -1,9 +1,10 @@
+using Figure8Challenge.Core.Models;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PetsAlone.Core
+namespace Figure8Challenge.Core.LogicImplementations
 {
     public class PetsService
     {
@@ -57,9 +58,9 @@ namespace PetsAlone.Core
             if (search != null)
             {
                 // A = PetType  if A is true
-                if (search.PetType > 0 )
+                if (search.PetType > 0)
                 {
-                    var record = petsDbContext.Pets.Where(c=>c.PetType == search.PetType).OrderByDescending(c=>c.MissingSince).ToList();
+                    var record = petsDbContext.Pets.Where(c => c.PetType == search.PetType).OrderByDescending(c => c.MissingSince).ToList();
                     return record;
                 }
                 // A = PetType  if A is false

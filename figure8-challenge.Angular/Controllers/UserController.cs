@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using PetsAlone.Core;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using PetsAlone.Angular.Models;
+using Figure8Challenge.Core.Models;
 
 namespace PetsAlone.Angular.Controllers
 {
@@ -17,7 +17,7 @@ namespace PetsAlone.Angular.Controllers
     /// This implementation is acceptable for the time being, let's focus on the
     /// other features that will help us get something live ASAP
     /// </summary>
-    
+
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace PetsAlone.Core
+namespace Figure8Challenge.Core.Models
 {
     /// <summary>
     /// This implementation is acceptable for the time being, let's focus on the
@@ -22,8 +22,8 @@ namespace PetsAlone.Core
             _passwordHasher = new PasswordHasher<ApplicationUser>();
             Database.EnsureCreated();
         }
-        
-        
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

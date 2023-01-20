@@ -1,7 +1,8 @@
+using Figure8Challenge.Core.LogicImplementations;
+using Figure8Challenge.Core.Models;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using PetsAlone.Core;
 using System;
 using System.Data.Common;
 using System.Data.Entity;

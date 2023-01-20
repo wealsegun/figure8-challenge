@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PetsAlone.Core;
-using System.Threading.Tasks;
+﻿using Figure8Challenge.Core.LogicImplementations;
+using Figure8Challenge.Core.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PetsAlone.Angular.Controllers
 {
@@ -9,7 +9,7 @@ namespace PetsAlone.Angular.Controllers
     public class PetsController : ControllerBase
     {
         private readonly Figure8ChallengeContext _petsDbContext;
-        public PetsController(Core.Figure8ChallengeContext petsDbContext)
+        public PetsController(Figure8ChallengeContext petsDbContext)
         {
             _petsDbContext = petsDbContext;
         }

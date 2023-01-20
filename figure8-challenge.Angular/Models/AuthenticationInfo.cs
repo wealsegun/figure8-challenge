@@ -1,4 +1,4 @@
-using PetsAlone.Core;
+using Figure8Challenge.Core.Models;
 
 namespace PetsAlone.Angular.Models
 {

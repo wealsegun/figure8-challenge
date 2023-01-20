@@ -1,7 +1,9 @@
 using System;
 using System.Data.Common;
 using System.Text;
-using Figure8Challenge.Core;
+using Figure8Challenge.Core.LogicImplementations;
+using Figure8Challenge.Core.LogicInterface;
+using Figure8Challenge.Core.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,7 +15,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using PetsAlone.Core;
 
 namespace PetsAlone.Angular
 {
@@ -35,7 +36,7 @@ namespace PetsAlone.Angular
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
             
             // This in-memory implementation is acceptable for now
-            services.AddDbContext<Core.Figure8ChallengeContext>(opts =>
+            services.AddDbContext<Figure8ChallengeContext>(opts =>
             {
                 static DbConnection CreateInMemoryDatabase()
                 {
@@ -48,7 +49,7 @@ namespace PetsAlone.Angular
             });
             
             services.AddDefaultIdentity<ApplicationUser>()
-                .AddEntityFrameworkStores<Core.Figure8ChallengeContext>();
+                .AddEntityFrameworkStores<Figure8ChallengeContext>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -126,7 +127,7 @@ namespace PetsAlone.Angular
                 }
             });
             
-            using var db = serviceProvider.GetRequiredService<Core.Figure8ChallengeContext>();
+            using var db = serviceProvider.GetRequiredService<Figure8ChallengeContext>();
             db.Database.EnsureCreated();
         }
     }
