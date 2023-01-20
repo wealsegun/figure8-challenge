@@ -12,6 +12,8 @@ namespace PetsAlone.Core
     public class Figure8ChallengeContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<My_Pet_Class> Pets { get; set; }
+        public DbSet<ContactDetails> ContactDetails { get; set; }
+
         private PasswordHasher<ApplicationUser> _passwordHasher { get; set; }
 
         public Figure8ChallengeContext(
@@ -51,6 +53,25 @@ namespace PetsAlone.Core
                 Name = "Snowball",
                 PetType = 4,
                 MissingSince = DateTime.Now.Subtract(TimeSpan.FromDays(2))
+            });
+
+            modelBuilder.Entity<ContactDetails>().HasData(new ContactDetails
+            {
+                Id = 1,
+                Name = "Olawale Ogunleye",
+                PhoneNumber = "+234 7060 578 240",
+                DateCreated = DateTime.Now,
+                UpdatedAt = null
+
+            });
+            modelBuilder.Entity<ContactDetails>().HasData(new ContactDetails
+            {
+                Id = 2,
+                Name = "John Mx",
+                PhoneNumber = "+44 7060 578 240",
+                DateCreated = DateTime.Now,
+                UpdatedAt = null
+
             });
 
             SeedApplicationUsers(modelBuilder);

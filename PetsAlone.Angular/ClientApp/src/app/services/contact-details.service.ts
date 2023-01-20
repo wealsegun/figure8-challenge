@@ -15,32 +15,32 @@ export class ContactService {
   }
 
   getAllContact(): Observable<any> {
-    const url = `${environment.baseUrl}api/ContactDetails/get-all-contact`;
+    const url = `${environment.baseUrl}api/Contact/contacts`;
     return this.httpClient.get<any>(url);
   }
 
-  getAllContactByUserId(userId: number): Observable<any> {
-    const url = `${this.base}api/contact/get-all-contact/${userId}`;
-    return this.httpClient.get<any>(url);
-  }
+  //getAllContactByUserId(userId: number): Observable<any> {
+  //  const url = `${this.base}api/Contact/contact/${userId}`;
+  //  return this.httpClient.get<any>(url);
+  //}
 
   getContactById(id: number): Observable<any> {
-    const url = `${this.base}api/contact/get-contact/${id}`;
+    const url = `${this.base}api/Contact/contact/${id}`;
     return this.httpClient.get<any>(url);
   }
 
   createContact(model: ContactModel): Observable<any> {
-    const url = `${this.base}api/contact/create`;
+    const url = `${this.base}api/Contact/create`;
     return this.httpClient.post<any>(url, model);
   }
 
-  updateContact(model: ContactModel): Observable<any> {
-    const url = `${this.base}api/contact/update`;
+  updateContact(model: ContactModel, id:number): Observable<any> {
+    const url = `${this.base}api/Contact/update/${id}`;
     return this.httpClient.put<any>(url, model);
   }
 
   deleteContact(id: number): Observable<any> {
-    const url = `${this.base}api/contact/delete/${id}`;
+    const url = `${this.base}api/Contact/delete/${id}`;
     return this.httpClient.delete<any>(url);
   }
 }

@@ -1,18 +1,9 @@
 <div class="containers">
-  <!--<div class="dropdown">
-    <input type="checkbox" id="dropdown">
+  <div class="dropdown">
+   
 
-    <label class="dropdown__face" for="dropdown">
-      <div class="dropdown__text">Dropdown</div>
-
-      <div class="dropdown__arrow"></div>
-    </label>
-
-    <ul class="dropdown__items">
-      <li *ngFor="let type of petTypes"><a (click)="filter(+type.id)">{{type.emoji}}</a></li>
-
-    </ul>
-  </div>-->
+    <button class="btn btn-primary" routerLink="/create-contact">Create Contact</button>
+  </div>
   <div class="table_format">
     <table class="styled-table">
       <thead>
@@ -31,11 +22,11 @@
           <td>{{contact.name}}</td>
           <td>{{contact.phoneNumber}}</td>
           <td>{{contact.dateCreated | date:'medium'}}</td>
-          <td>{{contact.updatedAt?  contact.updatedAt | date:'medium' : ''}}</td>
+          <td>{{contact.updatedAt ? (contact.updatedAt | date:'medium') : ''}}</td>
           <td>
             <!-- <button type="button" class="btn btn-primary"><i class="far fa-eye">View</i></button>-->
             <button type="button" class="btn btn-success"><i class="fas fa-edit" routerLink="/edit-contact/{{contact.id}}">Edit</i></button>
-            <button type="button" class="btn btn-danger" onclick="deleteContact(cont.id)"><i class="far fa-trash-alt">Delete</i></button>
+            <button type="button" class="btn btn-danger" (click)="deleteContact(contact.id)"><i class="far fa-trash-alt">Delete</i></button>
           </td>
         </tr>
         <!--<tr class="active-row">

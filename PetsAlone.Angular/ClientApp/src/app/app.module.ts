@@ -13,6 +13,8 @@ import { CurrentService } from './services/currentUser.service';
 import { CreatePetComponent } from './create-pet/create-pet.component';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contacts/contact.component';
+import { CreateContactComponent } from './create-contact/create-contact.component';
+import { EditContactComponent } from './edit-contact/edit-contact.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ContactComponent } from './contacts/contact.component';
     HomeComponent,
     LoginComponent,
     CreatePetComponent,
-    ContactComponent
+    ContactComponent,
+    CreateContactComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,7 +37,9 @@ import { ContactComponent } from './contacts/contact.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
       { path: 'create-pet', component: CreatePetComponent },
-      { path: 'contacts', component: ContactComponent }
+      { path: 'contacts', component: ContactComponent },
+      { path: 'create-contact', component: CreateContactComponent },
+      { path: 'edit-contact/:id', component: EditContactComponent }
     ])
   ],
   providers: [PetService, CurrentService],

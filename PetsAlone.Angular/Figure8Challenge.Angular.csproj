@@ -30,7 +30,9 @@
 
     <ItemGroup>
       <None Remove="ClientApp\src\app\contacts\contact.component.ts" />
+      <None Remove="ClientApp\src\app\create-contact\create-contact.component.ts" />
       <None Remove="ClientApp\src\app\create-pet\create-pet.component.ts" />
+      <None Remove="ClientApp\src\app\edit-contact\edit-contact.component.ts" />
       <None Remove="ClientApp\src\app\models\pet.model.ts" />
       <None Remove="ClientApp\src\app\models\user.model.ts" />
       <None Remove="ClientApp\src\app\services\currentUser.service.ts" />

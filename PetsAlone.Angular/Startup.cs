@@ -1,6 +1,7 @@
 using System;
 using System.Data.Common;
 using System.Text;
+using Figure8Challenge.Core;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -63,6 +64,8 @@ namespace PetsAlone.Angular
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                     };
                 });
+
+            services.AddScoped<IContactDetails, ContactService>();
             
             services.AddControllers();
             services.AddSwaggerGen(c =>
