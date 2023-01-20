@@ -10,7 +10,7 @@ namespace PetsAlone.Core
     {
         public List<ContactDetails>GetAllContact(Figure8ChallengeContext context)
         {
-            return context.ContactDetails.ToList();
+            return context.ContactDetails.OrderByDescending(c=>c.DateCreated).ToList();
         }
 
         public ContactDetails GetContactById(Figure8ChallengeContext context, long Id)

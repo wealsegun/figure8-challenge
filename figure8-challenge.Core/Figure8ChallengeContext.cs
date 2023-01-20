@@ -79,9 +79,9 @@ namespace PetsAlone.Core
 
         private void SeedApplicationUsers(ModelBuilder modelBuilder)
         {
-            var username = "elmyraduff";
-            var email = "elmyraduff@petsalone.com";
-            var password = "MontanaMax!!";
+            var username = "wealsegun";
+            var email = "wealsegun@gmail.com";
+            var password = "Pa$$w0rd";
 
             var user = new ApplicationUser
             {
