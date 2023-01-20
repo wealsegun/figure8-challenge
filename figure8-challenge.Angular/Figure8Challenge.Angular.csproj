@@ -45,7 +45,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PetsAlone.Core\Figure8Challenge.Core.csproj" />
+      <ProjectReference Include="..\figure8-challenge.Core\Figure8Challenge.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>
