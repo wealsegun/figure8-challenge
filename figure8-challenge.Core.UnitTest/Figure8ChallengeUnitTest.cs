@@ -12,6 +12,7 @@ namespace PetAlone.Core.UnitTest
     public class Figure8ChallengeUnitTest
     {
         public PetsService ps { get; private set; }
+        public ContactService cs { get; private set; }
         public ServiceCollection Services { get; private set; }
         public ServiceProvider ServiceProvider { get; protected set; }
         Figure8ChallengeContext _context;
@@ -28,6 +29,7 @@ namespace PetAlone.Core.UnitTest
             
             //context = new PetsDbContext(options);
             ps = new PetsService();
+            cs = new ContactService();
             Services = new ServiceCollection();
 
             Services.AddDbContext<Figure8ChallengeContext>(options => options.UseInMemoryDatabase("PetsAlone"), ServiceLifetime.Transient);
@@ -119,6 +121,65 @@ namespace PetAlone.Core.UnitTest
             var expected = ps.CreatePets(_context, pet);
             Assert.AreEqual(expected, actual); ;
            
+        }
+
+        [TestMethod]
+        public void GetContactDetails()
+        {
+            var contacts = new List<ContactDetails>() {
+
+                new ContactDetails {
+                    Id = 1,
+                    Name = "John Mx",
+                    PhoneNumber = "+23453245533",
+                    DateCreated=new DateTime(2023,01, 20),
+                    UpdatedAt = null
+
+                }
+
+            };
+
+            var actual = contacts.ToList();
+            var expected = cs.GetAllContact(_context);
+            Assert.AreEqual(expected.FirstOrDefault().Name, actual.FirstOrDefault().Name);
+        }
+
+        [TestMethod]
+        public void CreateContact()
+        {
+            int id = 3;
+            id = id + 1;
+            var contact = new ContactDetails
+            {
+                Name = "Olawale Lawrence Ogunleye",
+                PhoneNumber = "+234 7060 578 240"
+            };
+            var actual = id;
+            var expected = cs.CreateContact(_context, contact);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void UpdateContactDetails()
+        {
+            long id = 4;
+            var contact = new ContactDetails
+            {
+                Name = "Olawale Lawrence",
+                PhoneNumber = "+234 7060 578 240"
+            };
+            var actual = false;
+            var expected = cs.UpdateContact(_context, contact, id);
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void DeleteContact()
+        {
+            long id = 3;
+            var actual = false;
+            var expected = cs.DeleteContact(_context, id);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

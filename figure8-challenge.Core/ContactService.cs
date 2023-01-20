@@ -25,7 +25,7 @@ namespace PetsAlone.Core
             model.DateCreated = DateTime.UtcNow;
             var response = context.ContactDetails.Add(model);
             context.SaveChanges();
-            result = result + 1;
+            result = (int)model.Id + 1;
             return  result;
         }
 
