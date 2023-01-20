@@ -1,0 +1,48 @@
+<div class="row no-gutters">
+  <div class="col-md-7">
+    <div class="contact-wrap w-100 p-md-5 p-4">
+      <h3 class="mb-4">Create Missing Pet</h3>
+      <div id="form-message-warning" class="mb-4"></div>
+      <div id="form-message-success" class="mb-4">
+        Your message was sent, thank you!
+      </div>
+      <form class="contactForm" novalidate="novalidate" [formGroup]="createPetFormGroup">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="label" for="name">Name</label>
+              <input type="text" formControlName="name" class="form-control" name="name" id="name" placeholder="Name">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="label" for="subject">Pet Type</label>
+              <select formControlName="petType"  class="form-control"  placeholder="Subject">
+                <option>Select Pet</option>
+                <option *ngFor="let type of petTypes" value="{{type.id}}">{{type.name}}</option>
+                </select>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="datetimepicker">
+              <label class="label" for="subject">Missing Since</label>
+              <input type="date"  formControlName="missingSince" id="date" value="2018-07-03">
+              <span></span>
+              <input formControlName="missingTime" type="time" id="time" value="08:00">
+            </div>
+          </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <input (click)="createPet()" type="submit" value="Create Pet" class="btn btn-primary">
+                <div class="submitting"></div>
+              </div>
+            </div>
+          </div>
+</form>
+    </div>
+  </div>
+  <div class="col-md-5 d-flex align-items-stretch">
+    <div class="info-wrap w-100 p-5 img" style="background-image:url(../../assets/img/web.png)">
+    </div>
+  </div>
+</div>

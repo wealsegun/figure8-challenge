@@ -1,0 +1,41 @@
+<div class="containers">
+  <div class="dropdown">
+    <input type="checkbox" id="dropdown">
+
+    <label class="dropdown__face" for="dropdown">
+      <div class="dropdown__text">Dropdown</div>
+
+      <div class="dropdown__arrow"></div>
+    </label>
+
+    <ul class="dropdown__items" >
+      <li *ngFor="let type of petTypes"><a (click)="filter(+type.id)">{{type.emoji}}</a></li>
+      
+    </ul>
+  </div>
+  <div class="table_format">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Pet ID</th>
+          <th>Pet Name</th>
+          <th>Pet Type</th>
+          <th>Missing Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="active-row" *ngFor="let pet of petList">
+          <td>{{pet.id}}</td>
+          <td>{{pet.name}}</td>
+          <td>{{getPetTypeDetail(pet?.petType)}}</td>
+          <td>{{convertTodate(pet.missingSince) | date:'medium'}}</td>
+        </tr>
+        <!--<tr class="active-row">
+          <td>Melissa</td>
+          <td>5150</td>
+        </tr>-->
+        <!-- and so on... -->
+      </tbody>
+    </table>
+  </div>
+</div>

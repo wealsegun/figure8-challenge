@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Cat",
+    "emoji": "🐈"
+  },
+  {
+    "id": 2,
+    "name": "Dog",
+    "emoji": "🐕"
+  },
+  {
+    "id": 3,
+    "name": "Hamster",
+    "emoji": "🐹"
+  },
+  {
+    "id": 4,
+    "name": "Bird",
+    "emoji": "🕊️"
+  },
+  {
+    "id": 5,
+    "name": "Rabbit",
+    "emoji": "🐇"
+  },
+  {
+    "id": 6,
+    "name": "Fish",
+    "emoji": "🐟"
+  },
+  {
+    "id": 7,
+    "name": "Lizard",
+    "emoji": "🦎"
+  },
+  {
+    "id": 8,
+    "name": "Horse",
+    "emoji": "🐎"
+  },
+  {
+    "id": 9,
+    "name": "Gerbil",
+    "emoji": "🦡"
+  },
+  {
+    "id": 10,
+    "name": "Tortoise",
+    "emoji": "🐢"
+  }
+]
