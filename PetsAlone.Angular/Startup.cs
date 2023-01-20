@@ -34,11 +34,11 @@ namespace PetsAlone.Angular
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
             
             // This in-memory implementation is acceptable for now
-            services.AddDbContext<PetsDbContext>(opts =>
+            services.AddDbContext<Core.Figure8ChallengeContext>(opts =>
             {
                 static DbConnection CreateInMemoryDatabase()
                 {
-                    var connection = new SqliteConnection("Filename=PetsAlone.db");
+                    var connection = new SqliteConnection("Filename=Figure8Challenge.db");
                     connection.Open();
                     return connection;
                 }
@@ -47,7 +47,7 @@ namespace PetsAlone.Angular
             });
             
             services.AddDefaultIdentity<ApplicationUser>()
-                .AddEntityFrameworkStores<PetsDbContext>();
+                .AddEntityFrameworkStores<Core.Figure8ChallengeContext>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -67,7 +67,7 @@ namespace PetsAlone.Angular
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "PetsAlone.Angular", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo {Title = "Figure8Challenge.Angular", Version = "v1"});
             });
         }
 
@@ -82,7 +82,7 @@ namespace PetsAlone.Angular
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PetsAlone.Web v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Figure8Challenge.Web v1"));
             }
             else
             {
@@ -123,7 +123,7 @@ namespace PetsAlone.Angular
                 }
             });
             
-            using var db = serviceProvider.GetRequiredService<PetsDbContext>();
+            using var db = serviceProvider.GetRequiredService<Core.Figure8ChallengeContext>();
             db.Database.EnsureCreated();
         }
     }

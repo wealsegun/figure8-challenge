@@ -9,13 +9,13 @@ namespace PetsAlone.Core
     /// This implementation is acceptable for the time being, let's focus on the
     /// other features that will help us get something live ASAP
     /// </summary>
-    public class PetsDbContext : IdentityDbContext<ApplicationUser>
+    public class Figure8ChallengeContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<My_Pet_Class> Pets { get; set; }
         private PasswordHasher<ApplicationUser> _passwordHasher { get; set; }
 
-        public PetsDbContext(
-            DbContextOptions<PetsDbContext> options) : base(options)
+        public Figure8ChallengeContext(
+            DbContextOptions<Figure8ChallengeContext> options) : base(options)
         {
             _passwordHasher = new PasswordHasher<ApplicationUser>();
             Database.EnsureCreated();

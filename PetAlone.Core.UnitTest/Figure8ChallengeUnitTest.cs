@@ -9,14 +9,14 @@ using System.Data.Entity;
 namespace PetAlone.Core.UnitTest
 {
     [TestClass]
-    public class PetAloneUnitTest
+    public class Figure8ChallengeUnitTest
     {
         public PetsService ps { get; private set; }
         public ServiceCollection Services { get; private set; }
         public ServiceProvider ServiceProvider { get; protected set; }
-        PetsDbContext _context;
+        Figure8ChallengeContext _context;
 
-        private DbContextOptions<PetsDbContext> context;
+        private DbContextOptions<Figure8ChallengeContext> context;
         
         [TestInitialize]
         public void Initialize()
@@ -30,10 +30,10 @@ namespace PetAlone.Core.UnitTest
             ps = new PetsService();
             Services = new ServiceCollection();
 
-            Services.AddDbContext<PetsDbContext>(options => options.UseInMemoryDatabase("PetsAlone"), ServiceLifetime.Transient);
-            Services.AddTransient<PetsDbContext>(sp => sp.GetService<PetsDbContext>());
+            Services.AddDbContext<Figure8ChallengeContext>(options => options.UseInMemoryDatabase("PetsAlone"), ServiceLifetime.Transient);
+            Services.AddTransient<Figure8ChallengeContext>(sp => sp.GetService<Figure8ChallengeContext>());
 
-            Services.AddDbContext<PetsDbContext>(opts =>
+            Services.AddDbContext<Figure8ChallengeContext>(opts =>
             {
                 static DbConnection CreateInMemoryDatabase()
                 {
@@ -47,10 +47,10 @@ namespace PetAlone.Core.UnitTest
             //Services.AddDefaultIdentity<ApplicationUser>()
               // .AddEntityFrameworkStores<PetsDbContext>();
 
-            var dbContextOptionBuilder = new DbContextOptionsBuilder<PetsDbContext>();
+            var dbContextOptionBuilder = new DbContextOptionsBuilder<Figure8ChallengeContext>();
             dbContextOptionBuilder.UseInMemoryDatabase(databaseName: "PetsAlone");
 
-            _context = new PetsDbContext(dbContextOptionBuilder.Options);
+            _context = new Figure8ChallengeContext(dbContextOptionBuilder.Options);
             ps = new PetsService();
 
             ServiceProvider = Services.BuildServiceProvider();

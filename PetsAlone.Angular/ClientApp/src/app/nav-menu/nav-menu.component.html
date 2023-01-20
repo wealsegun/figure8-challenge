@@ -3,7 +3,7 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">PetsAlone.Angular</a>
+      <a class="navbar-brand" [routerLink]="['/']">8Figures.Angular</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -25,21 +25,21 @@
               [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link text-dark" [routerLink]="['/']">Welcome {{model?.username}}</a>
           </li>
-          <li class="nav-item"
-              >
-            <a  (click)="reload()" class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          <li class="nav-item">
+            <a (click)="reload()" class="nav-link text-dark" [routerLink]="['/']">Home</a>
           </li>
-          <li class="nav-item"
-             >
-              <a *ngIf="token!==null" class="nav-link text-dark" [routerLink]="['/create-pet']">Create Missing Pet</a>
+          <li class="nav-item">
+            <a *ngIf="token!==null" class="nav-link text-dark" [routerLink]="['/contacts']">Contact List</a>
           </li>
-          <li class="nav-item"
-             >
+          <!--<li class="nav-item">
+            <a *ngIf="token!==null" class="nav-link text-dark" [routerLink]="['/create-pet']">Create Missing Pet</a>
+          </li>-->
+          <li class="nav-item">
             <ng-container *ngIf="token===null; else elsehasExpireTemplate">
               <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
             </ng-container>
             <ng-template #elsehasExpireTemplate>
-              <a  class="nav-link text-dark" (click)="logout()">Logout</a>
+              <a class="nav-link text-dark" (click)="logout()">Logout</a>
             </ng-template>
 
 

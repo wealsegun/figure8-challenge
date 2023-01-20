@@ -7,7 +7,7 @@ namespace PetsAlone.Core
 {
     public class PetsService
     {
-        public List<My_Pet_Class> GetAll(PetsDbContext petsDbContext)
+        public List<My_Pet_Class> GetAll(Figure8ChallengeContext petsDbContext)
         {
             var connection = new SqliteConnection(petsDbContext.Database.GetConnectionString());
             connection.Open();
@@ -46,7 +46,7 @@ namespace PetsAlone.Core
             return yy;
         }
 
-        public List<My_Pet_Class> GetPetListBySearchField(PetsDbContext petsDbContext, PetSearchField search)
+        public List<My_Pet_Class> GetPetListBySearchField(Figure8ChallengeContext petsDbContext, PetSearchField search)
         {
             //var connection = new SqliteConnection(petsDbContext.Database.GetConnectionString());
             //connection.Open();
@@ -76,7 +76,7 @@ namespace PetsAlone.Core
 
         }
 
-        public int CreatePets(PetsDbContext petsDbContext, My_Pet_Class model)
+        public int CreatePets(Figure8ChallengeContext petsDbContext, My_Pet_Class model)
         {
             int count = 0;
 

@@ -29,6 +29,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="ClientApp\src\app\contacts\contact.component.ts" />
       <None Remove="ClientApp\src\app\create-pet\create-pet.component.ts" />
       <None Remove="ClientApp\src\app\models\pet.model.ts" />
       <None Remove="ClientApp\src\app\models\user.model.ts" />
@@ -37,7 +38,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PetsAlone.Core\PetsAlone.Core.csproj" />
+      <TypeScriptCompile Remove="ClientApp\src\app\models\contact.model.ts" />
+      <TypeScriptCompile Remove="ClientApp\src\app\services\contact-details.service.ts" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\PetsAlone.Core\Figure8Challenge.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>

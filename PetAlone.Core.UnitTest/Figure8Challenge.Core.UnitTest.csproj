@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PetsAlone.Core\PetsAlone.Core.csproj" />
+    <ProjectReference Include="..\PetsAlone.Core\Figure8Challenge.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -12,6 +12,7 @@ import { PetService } from './services/pet.service';
 import { CurrentService } from './services/currentUser.service';
 import { CreatePetComponent } from './create-pet/create-pet.component';
 import { CommonModule } from '@angular/common';
+import { ContactComponent } from './contacts/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CommonModule } from '@angular/common';
     NavMenuComponent,
     HomeComponent,
     LoginComponent,
-    CreatePetComponent
+    CreatePetComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,7 +32,8 @@ import { CommonModule } from '@angular/common';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'create-pet', component: CreatePetComponent }
+      { path: 'create-pet', component: CreatePetComponent },
+      { path: 'contacts', component: ContactComponent }
     ])
   ],
   providers: [PetService, CurrentService],

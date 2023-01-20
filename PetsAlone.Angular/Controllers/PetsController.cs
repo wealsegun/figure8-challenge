@@ -8,8 +8,8 @@ namespace PetsAlone.Angular.Controllers
     [Route("api/[controller]")]
     public class PetsController : ControllerBase
     {
-        private readonly PetsDbContext _petsDbContext;
-        public PetsController(PetsDbContext petsDbContext)
+        private readonly Core.Figure8ChallengeContext _petsDbContext;
+        public PetsController(Core.Figure8ChallengeContext petsDbContext)
         {
             _petsDbContext = petsDbContext;
         }

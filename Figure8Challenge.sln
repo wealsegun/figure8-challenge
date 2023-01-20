@@ -5,11 +5,11 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Figure8Challenge.Angular", "PetsAlone.Angular\Figure8Challenge.Angular.csproj", "{5CDCA49F-AD53-4820-9711-159D54D75A3A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetsAlone.Core", "PetsAlone.Core\PetsAlone.Core.csproj", "{FF44EDDA-A9A2-4ABA-9BEA-2BD196C902F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Figure8Challenge.Core", "PetsAlone.Core\Figure8Challenge.Core.csproj", "{FF44EDDA-A9A2-4ABA-9BEA-2BD196C902F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{AC662081-9B5D-438A-9746-38245D896BBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetAlone.Core.UnitTest", "PetAlone.Core.UnitTest\PetAlone.Core.UnitTest.csproj", "{4E54D686-83D4-4BAF-8917-014BD3EC0810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Figure8Challenge.Core.UnitTest", "PetAlone.Core.UnitTest\Figure8Challenge.Core.UnitTest.csproj", "{4E54D686-83D4-4BAF-8917-014BD3EC0810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
