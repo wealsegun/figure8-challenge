@@ -39,6 +39,7 @@ namespace Figure8Challenge.Core.LogicImplementations
             response.Name = model.Name;
             response.PhoneNumber = model.PhoneNumber;
             response.UpdatedAt = DateTime.UtcNow;
+            response.Age = model.Age;
 
             var compe = context.ContactDetails.Update(response);
             context.SaveChanges();

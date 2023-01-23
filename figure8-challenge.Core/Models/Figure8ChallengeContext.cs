@@ -70,6 +70,7 @@ namespace Figure8Challenge.Core.Models
                 Name = "John Mx",
                 PhoneNumber = "+44 7060 578 240",
                 DateCreated = DateTime.Now,
+                Age = 23,
                 UpdatedAt = null
 
             });

@@ -18,6 +18,7 @@ export class CreateContactComponent implements OnInit {
     this.createContactFormGroup = this.fb.group({
       name: ['', [Validators.required]],
       phoneNumber: ['', [Validators.required]],
+      age: [0, Validators.required]
       
     })
   }
@@ -28,6 +29,9 @@ export class CreateContactComponent implements OnInit {
 
   get phoneNumber() {
     return this.createContactFormGroup.get('phoneNumber');
+  }
+  get age() {
+    return this.createContactFormGroup.get('age');
   }
 
   ngOnInit() {
@@ -41,6 +45,7 @@ export class CreateContactComponent implements OnInit {
       id: 0,
       name: this.name.value,
       phoneNumber: this.phoneNumber.value,
+      age: this.age.value,
       dateCreated: "2021-03-25",
       updatedAt: null
     };
